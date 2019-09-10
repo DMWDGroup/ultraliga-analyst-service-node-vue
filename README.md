@@ -1,2 +1,2 @@
-# ultraliga-analyst-service-golang-vue
+# ultraliga-analyst-service-node-vue
 Unofficial ultraliga statistics site.
