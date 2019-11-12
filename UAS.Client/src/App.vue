@@ -9,14 +9,12 @@
 </template>
 
 <style lang="scss">
-@import url("https://fonts.googleapis.com/css?family=Raleway:400,700&display=swap");
-
 * {
   box-sizing: border-box;
 }
 
 #app {
-  font-family: "Raleway", Helvetica, Arial, sans-serif;
+  font-family: "Raleway", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
