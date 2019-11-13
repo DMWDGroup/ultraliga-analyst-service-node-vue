@@ -9,6 +9,10 @@
   box-sizing: border-box;
 }
 
+body, html {
+  margin: 0;
+}
+
 #app {
   font-family: "Raleway", sans-serif;
   -webkit-font-smoothing: antialiased;
