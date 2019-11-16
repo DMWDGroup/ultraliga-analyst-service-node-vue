@@ -1,20 +1,24 @@
 @font-face {
-  font-family: 'Raleway';
-  src: url('~@/assets/fonts/Raleway-Bold.ttf') format('ttf');
-  font-weight: bold;
+  font-family: "Raleway";
   font-style: normal;
+  font-weight: 100;
+  src: local("Raleway Thin"), local("Raleway-Thin"),
+    url("~@/assets/fonts/raleway-v14-latin-ext_latin-100.woff2") format("woff2"),
+    url("~@/assets/fonts/raleway-v14-latin-ext_latin-100.woff") format("woff");
 }
-
 @font-face {
-  font-family: 'Raleway';
-  src: url('~@/assets/fonts/Raleway-Regular.ttf') format('ttf');
-  font-weight: normal;
+  font-family: "Raleway";
   font-style: normal;
+  font-weight: 400;
+  src: local("Raleway"), local("Raleway-Regular"),
+    url("~@/assets/fonts/raleway-v14-latin-ext_latin-regular.woff2") format("woff2"),
+    url("~@/assets/fonts/raleway-v14-latin-ext_latin-regular.woff") format("woff");
 }
-
 @font-face {
-  font-family: 'Raleway';
-  src: url('~@/assets/fonts/Raleway-Thin.ttf') format('ttf');
-  font-weight: lighter;
+  font-family: "Raleway";
   font-style: normal;
+  font-weight: 700;
+  src: local("Raleway Bold"), local("Raleway-Bold"),
+    url("~@/assets/fonts/raleway-v14-latin-ext_latin-700.woff2") format("woff2"),
+    url("~@/assets/fonts/raleway-v14-latin-ext_latin-700.woff") format("woff");
 }
