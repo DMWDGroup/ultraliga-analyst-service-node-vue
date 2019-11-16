@@ -9,7 +9,7 @@
     </div>
     <div class="header__logo-wrapper"><span class="bold">ULTRALIGA</span> ANALYST SERVICE</div>
     <div class="header__seasons-wrapper">
-      <select name="seasons" id="seasons">
+      <select name="seasons" id="seasons" class="seasons__select">
         <option value="1-PO" selected>1-PO</option>
       </select>
     </div>
@@ -19,7 +19,7 @@
 <script>
 export default {};
 </script>
-
+scss
 <style lang="scss">
 .header {
   display: grid;
@@ -68,6 +68,38 @@ export default {};
     flex-flow: row;
     justify-content: flex-end;
     align-items: center;
+
+    &::before {
+      display: block;
+      content: "SEZON";
+      font-weight: bold;
+      padding-right: 5px;
+      padding-left: 35px;
+      background: url("~@/assets/img/Thunder.svg");
+      background-repeat: no-repeat;
+      background-size: contain;
+
+      @media (max-width: 1410px) {
+        content: "S:";
+      }
+    }
+  }
+
+  .seasons__select {
+    display: block;
+    background: transparent;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    text-indent: 0.01px;
+    border: none;
+    font-size: 3rem;
+    font-family: inherit;
+    font-weight: 100;
+    color: $text-primary;
+
+    & ::-ms-expand {
+      display: none;
+    }
   }
 }
 </style>
