@@ -19,7 +19,7 @@
 <script>
 export default {};
 </script>
-scss
+
 <style lang="scss">
 .header {
   display: grid;
