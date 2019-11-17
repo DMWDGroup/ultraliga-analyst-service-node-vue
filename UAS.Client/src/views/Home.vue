@@ -1,11 +1,11 @@
 <template>
   <div class="home">
-    <TheHeader/>
+    <TheHeader />
   </div>
 </template>
 
 <script>
-import TheHeader from "../components/TheHeader.vue"
+import TheHeader from "../components/TheHeader.vue";
 
 export default {
   name: "home",
