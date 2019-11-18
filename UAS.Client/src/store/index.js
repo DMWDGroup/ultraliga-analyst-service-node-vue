@@ -4,8 +4,14 @@ import Vuex from "vuex";
 Vue.use(Vuex);
 
 export default new Vuex.Store({
-  state: {},
-  mutations: {},
+  state: {
+    menuOpened: false
+  },
+  mutations: {
+    toggleMenuState(state) {
+      state.menuOpened = !state.menuOpened;
+    }
+  },
   actions: {},
   modules: {}
 });
