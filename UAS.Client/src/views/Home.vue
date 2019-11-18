@@ -1,16 +1,19 @@
 <template>
   <div class="home">
+    <TheMenu />
     <TheHeader />
   </div>
 </template>
 
 <script>
 import TheHeader from "../components/TheHeader.vue";
+import TheMenu from "../components/TheMenu.vue";
 
 export default {
   name: "home",
   components: {
-    TheHeader
+    TheHeader,
+    TheMenu
   }
 };
 </script>
