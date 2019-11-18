@@ -1,7 +1,7 @@
 <template>
   <div class="header">
     <div class="header__hamburger-wrapper">
-      <button class="hamburger__button">
+      <button class="hamburger__button" @click.prevent="toggleMenu">
         <div class="hamburger__section"></div>
         <div class="hamburger__section"></div>
         <div class="hamburger__section"></div>
@@ -17,7 +17,13 @@
 </template>
 
 <script>
-export default {};
+export default {
+  methods: {
+    toggleMenu() {
+      this.$store.commit("toggleMenuState");
+    }
+  }
+};
 </script>
 
 <style lang="scss">
