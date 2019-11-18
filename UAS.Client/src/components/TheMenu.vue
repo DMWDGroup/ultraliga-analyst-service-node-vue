@@ -1,12 +1,12 @@
 <template>
-  <div class="menu">
+  <div class="menu" :class="{ display: menuState }">
     <div class="menu__header">
       <div class="menu__logo">
         <span class="bold">Ultraliga</span>
         Analyst Service
       </div>
       <div class="menu__button-wrapper">
-        <button class="menu__button-close">
+        <button class="menu__button-close" @click.prevent="toggleMenu">
           X
         </button>
       </div>
@@ -39,12 +39,23 @@
 </template>
 
 <script>
-export default {};
+export default {
+  computed: {
+    menuState: function() {
+      return this.$store.state.menuOpened;
+    }
+  },
+  methods: {
+    toggleMenu() {
+      this.$store.commit("toggleMenuState");
+    }
+  }
+};
 </script>
 
 <style lang="scss">
 .menu {
-  display: flex;
+  display: none;
   flex-flow: column;
   width: 380px;
   height: 100vh;
@@ -122,7 +133,7 @@ export default {};
   }
 }
 
-.bold {
-  font-weight: bold;
+.display {
+  display: flex;
 }
 </style>
