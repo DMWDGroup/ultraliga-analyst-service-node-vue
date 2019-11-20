@@ -1,45 +1,58 @@
 <template>
-  <div class="menu">
-    <div class="menu__header">
-      <div class="menu__logo">
-        <span class="bold">Ultraliga</span>
-        Analyst Service
+  <transition name="slide">
+    <div v-if="menuState" class="menu">
+      <div class="menu__header">
+        <div class="menu__logo">
+          <span class="bold">Ultraliga</span>
+          Analyst Service
+        </div>
+        <div class="menu__button-wrapper">
+          <button class="menu__button-close" @click.prevent="toggleMenu">
+            X
+          </button>
+        </div>
       </div>
-      <div class="menu__button-wrapper">
-        <button class="menu__button-close">
-          X
-        </button>
+      <div class="menu__links-wrapper">
+        <ul class="links">
+          <li class="links__item">
+            <router-link to="/" class="links__item-anchor">
+              Podsumowanie
+            </router-link>
+          </li>
+          <li class="links__item">
+            <router-link to="/matches" class="links__item-anchor">
+              Mecze
+            </router-link>
+          </li>
+          <li class="links__item">
+            <router-link to="/players" class="links__item-anchor">
+              Zawodnicy
+            </router-link>
+          </li>
+          <li class="links__item">
+            <router-link to="/teams" class="links__item-anchor">
+              Drużynki
+            </router-link>
+          </li>
+        </ul>
       </div>
     </div>
-    <div class="menu__links-wrapper">
-      <ul class="links">
-        <li class="links__item">
-          <router-link to="/" class="links__item-anchor">
-            Podsumowanie
-          </router-link>
-        </li>
-        <li class="links__item">
-          <router-link to="/matches" class="links__item-anchor">
-            Mecze
-          </router-link>
-        </li>
-        <li class="links__item">
-          <router-link to="/players" class="links__item-anchor">
-            Zawodnicy
-          </router-link>
-        </li>
-        <li class="links__item">
-          <router-link to="/teams" class="links__item-anchor">
-            Drużynki
-          </router-link>
-        </li>
-      </ul>
-    </div>
-  </div>
+  </transition>
 </template>
 
 <script>
-export default {};
+export default {
+  computed: {
+    menuState: function() {
+      return this.$store.state.menuOpened;
+    }
+  },
+  methods: {
+    toggleMenu() {
+      this.$store.commit("toggleMenuState");
+    }
+  }
+};
 </script>
 
 <style lang="scss">
@@ -122,7 +135,13 @@ export default {};
   }
 }
 
-.bold {
-  font-weight: bold;
+.slide-enter-active,
+.slide-leave-active {
+  transition: left 0.5s, opacity 0.5s;
+}
+.slide-enter,
+.slide-leave-to {
+  left: -380px;
+  opacity: 0;
 }
 </style>
