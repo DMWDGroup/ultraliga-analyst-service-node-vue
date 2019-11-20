@@ -43,7 +43,7 @@
 <script>
 export default {
   computed: {
-    menuState: function() {
+    menuState() {
       return this.$store.state.menuOpened;
     }
   },
