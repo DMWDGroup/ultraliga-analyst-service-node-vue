@@ -2,7 +2,9 @@
   <div class="home">
     <TheMenu />
     <TheHeader />
-    <main></main>
+    <main>
+      <TheSeasonMatches />
+    </main>
     <TheFooter />
   </div>
 </template>
@@ -11,13 +13,15 @@
 import TheHeader from "@/components/TheHeader.vue";
 import TheMenu from "@/components/TheMenu.vue";
 import TheFooter from "@/components/TheFooter.vue";
+import TheSeasonMatches from "@/components/TheSeasonMatches.vue";
 
 export default {
   name: "home",
   components: {
     TheHeader,
     TheMenu,
-    TheFooter
+    TheFooter,
+    TheSeasonMatches
   }
 };
 </script>
@@ -34,5 +38,6 @@ export default {
 main {
   align-self: center;
   width: 960px;
+  margin: 10rem 0;
 }
 </style>
