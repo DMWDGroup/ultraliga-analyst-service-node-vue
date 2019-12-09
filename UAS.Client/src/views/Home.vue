@@ -2,6 +2,7 @@
   <div class="home">
     <TheMenu />
     <TheHeader />
+    <main></main>
     <TheFooter />
   </div>
 </template>
@@ -23,8 +24,15 @@ export default {
 
 <style lang="scss">
 .home {
+  display: flex;
+  flex-flow: column;
   min-height: 100vh;
   background: $background;
   background: linear-gradient(180deg, $background 0%, darken($background, 5%) 100%);
+}
+
+main {
+  align-self: center;
+  width: 960px;
 }
 </style>
