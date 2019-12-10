@@ -18,6 +18,7 @@ export default {};
     color: $text-primary;
     font-weight: 100;
     font-size: 1.2rem;
+    text-align: center;
 
     .footer__link {
       color: $text-primary;
