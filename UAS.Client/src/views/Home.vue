@@ -3,7 +3,8 @@
     <TheMenu />
     <TheHeader />
     <main>
-      <TheSeasonMatches />
+      <TheSeasonMatches class="section__margin" />
+      <TheSeasonSummary class="section__margin" />
     </main>
     <TheFooter />
   </div>
@@ -14,6 +15,7 @@ import TheHeader from "@/components/TheHeader.vue";
 import TheMenu from "@/components/TheMenu.vue";
 import TheFooter from "@/components/TheFooter.vue";
 import TheSeasonMatches from "@/components/TheSeasonMatches.vue";
+import TheSeasonSummary from "@/components/TheSeasonSummary.vue";
 
 export default {
   name: "home",
@@ -21,7 +23,8 @@ export default {
     TheHeader,
     TheMenu,
     TheFooter,
-    TheSeasonMatches
+    TheSeasonMatches,
+    TheSeasonSummary
   }
 };
 </script>
@@ -35,9 +38,12 @@ export default {
   background: linear-gradient(180deg, $background 0%, darken($background, 5%) 100%);
 }
 
+.section__margin {
+  margin: 10rem 0;
+}
+
 main {
   align-self: center;
   width: 960px;
-  margin: 10rem 0;
 }
 </style>
