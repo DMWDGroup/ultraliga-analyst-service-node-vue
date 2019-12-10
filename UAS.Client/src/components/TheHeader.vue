@@ -67,6 +67,7 @@ export default {
 
   .header__logo-wrapper {
     text-align: center;
+    font-weight: 100;
   }
 
   .header__seasons-wrapper {

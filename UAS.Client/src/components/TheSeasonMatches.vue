@@ -22,9 +22,13 @@ export default {
 };
 </script>
 
-<style lang="scss" scoped>
+<style lang="scss">
 .details {
   margin: 4rem 0;
+}
+
+.season-matches {
+  text-align: center;
 }
 
 .season-matches__button-load {
