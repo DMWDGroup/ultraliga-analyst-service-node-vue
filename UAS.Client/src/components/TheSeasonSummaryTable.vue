@@ -71,13 +71,14 @@ export default {};
   display: grid;
   grid-template-columns: 25% 10% repeat(3, 18%) auto;
   margin: 0.5rem 0;
+  color: $text-secondary;
 
   &:first-child {
-    color: $text-primary;
+    color: $text-secondary;
   }
 
   &:nth-child(even) {
-    color: $text-secondary;
+    color: $text-primary;
   }
 
   .table__row-progress-bar {
@@ -88,7 +89,6 @@ export default {};
     .progress-bar {
       background: $primary;
       height: 100%;
-      // width: 100%;
       position: absolute;
       top: 0;
       left: 0;
