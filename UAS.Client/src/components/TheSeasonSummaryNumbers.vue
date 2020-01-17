@@ -1,6 +1,6 @@
 <template>
   <div class="numbers-row__container">
-    <div v-for="item in numbers" :key="item" class="numbers-row__item">
+    <div v-for="item in numbers" :key="item.heading" class="numbers-row__item">
       <h4 class="item__header">{{ item.heading }}</h4>
       <p class="item__value">{{ item.value }}</p>
     </div>
