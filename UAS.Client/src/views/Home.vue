@@ -1,12 +1,12 @@
 <template>
   <div class="home">
     <TheMenu />
-    <TheHeader />
-    <main>
+    <TheHeader :class="{ blur: menuState }" />
+    <main :class="{ blur: menuState }">
       <TheSeasonMatches class="section__margin" />
       <TheSeasonSummary class="section__margin" />
     </main>
-    <TheFooter />
+    <TheFooter :class="{ blur: menuState }" />
   </div>
 </template>
 
@@ -25,6 +25,11 @@ export default {
     TheFooter,
     TheSeasonMatches,
     TheSeasonSummary
+  },
+  computed: {
+    menuState() {
+      return this.$store.state.menuOpened;
+    }
   }
 };
 </script>
@@ -36,6 +41,9 @@ export default {
   min-height: 100vh;
   background: $background;
   background: linear-gradient(180deg, $background 0%, darken($background, 5%) 100%);
+  & * {
+    transition: all 0.2s ease-in;
+  }
 }
 
 .section__margin {
@@ -45,5 +53,10 @@ export default {
 main {
   align-self: center;
   width: 960px;
+}
+
+.blur {
+  filter: blur(5px);
+  transition: all 0.2s ease-in;
 }
 </style>
