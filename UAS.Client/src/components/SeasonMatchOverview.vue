@@ -34,6 +34,10 @@ export default {};
 .match {
   margin-top: 2rem;
 
+  &:hover {
+    transform: scale(1.05);
+  }
+
   .match__detail-wrapper {
     display: grid;
     grid-template-columns: [first] 42% auto [last] 42%;
