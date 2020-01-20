@@ -1,6 +1,6 @@
 <template>
-  <div class="numbers-row__container">
-    <div v-for="item in numbers" :key="item.heading" class="numbers-row__item">
+  <div class="charts-row__container">
+    <div v-for="item in charts" :key="item.heading" class="charts-row__item">
       <h4 class="item__header">{{ item.heading }}</h4>
       <ChartHalfDoughnut :chartdata="item.chartData" />
     </div>
@@ -16,7 +16,7 @@ export default {
   },
   data() {
     return {
-      numbers: [
+      charts: [
         {
           heading: "Najkrótszy mecz",
           chartData: {
@@ -42,7 +42,7 @@ export default {
           }
         },
         {
-          heading: "Najwięcej zabójstw",
+          heading: "Najdłuższy mecz",
           chartData: {
             labels: ["1", "2", "3"],
             datasets: [
@@ -72,13 +72,13 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.numbers-row__container {
+.charts-row__container {
   display: grid;
   grid-template-columns: repeat(4, 25%);
   margin: 4rem 0;
   color: $text-primary;
 
-  .numbers-row__item {
+  .charts-row__item {
     padding: 0 1rem;
   }
 }
