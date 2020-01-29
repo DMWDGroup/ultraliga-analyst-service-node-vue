@@ -1,6 +1,6 @@
 <template>
   <div class="match">
-    <a href="/" target="_blank" rel="noopener noreferrer" class="match__detail-wrapper">
+    <router-link to="/match" class="match__detail-wrapper">
       <div class="match__team match__team--left">
         <p class="match__team-name">Illuminar Gaming</p>
         <div class="match__team-logo-wrapper">
@@ -22,7 +22,7 @@
         </div>
         <p class="match__team-name">piratesports</p>
       </div>
-    </a>
+    </router-link>
   </div>
 </template>
 
