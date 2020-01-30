@@ -7,14 +7,29 @@
     </div>
     <div class="match-overview">
       <div class="match-overview__team">
-        <img class="team__logo" :src="teamLogos[0]" />
+        <img class="team__logo" :src="teams[0].logo" />
         <p class="team__name">
           IlluminarGaming
         </p>
       </div>
-      <div class="match-overview__details"></div>
+      <div class="match-overview__details">
+        <div class="details__winner">
+          <p
+            v-for="team in teams"
+            :key="team.logo"
+            class="winner__paragraph"
+            :class="{ 'winner__paragraph--winner': team.winner }"
+          >
+            {{ team.winner === true ? "win" : "lose" }}
+          </p>
+        </div>
+        <div class="details__date">
+          <p class="date__paragraph">{{ info.date }}</p>
+          <p class="time__paragraph">{{ info.time }}</p>
+        </div>
+      </div>
       <div class="match-overview__team">
-        <img class="team__logo" :src="teamLogos[1]" />
+        <img class="team__logo" :src="teams[1].logo" />
         <p class="team__name">
           Piratesport
         </p>
@@ -27,10 +42,22 @@
 export default {
   data() {
     return {
-      teamLogos: [
-        "https://gamepedia.cursecdn.com/lolesports_gamepedia_en/thumb/5/58/Illuminar_Gaminglogo_square.png/1200px-Illuminar_Gaminglogo_square.png",
-        "https://gamepedia.cursecdn.com/lolesports_gamepedia_en/thumb/0/01/Piratesportslogo_square.png/1200px-Piratesportslogo_square.png"
-      ]
+      teams: [
+        {
+          winner: true,
+          logo:
+            "https://gamepedia.cursecdn.com/lolesports_gamepedia_en/thumb/5/58/Illuminar_Gaminglogo_square.png/1200px-Illuminar_Gaminglogo_square.png"
+        },
+        {
+          winner: false,
+          logo:
+            "https://gamepedia.cursecdn.com/lolesports_gamepedia_en/thumb/0/01/Piratesportslogo_square.png/1200px-Piratesportslogo_square.png"
+        }
+      ],
+      info: {
+        date: "24.12.2005",
+        time: "12:00"
+      }
     };
   }
 };
@@ -47,6 +74,7 @@ export default {
       color: $text-primary;
       font-size: 3rem;
       font-weight: 700;
+      margin: 0;
     }
   }
 
@@ -75,7 +103,42 @@ export default {
           top: 0;
           z-index: 10;
           color: $text-primary;
-          font-size: 1rem;
+          font-size: 1.5rem;
+          font-weight: 700;
+        }
+      }
+    }
+
+    &__details {
+      .details {
+        &__winner {
+          display: flex;
+          flex-flow: row;
+          justify-content: space-around;
+
+          .winner__paragraph {
+            font-size: 3.5rem;
+            color: $text-primary;
+            text-transform: uppercase;
+            font-weight: 700;
+            margin: 1rem 0;
+
+            &--winner {
+              color: $secondary;
+            }
+          }
+        }
+
+        &__date {
+          display: flex;
+          flex-flow: column;
+          align-items: center;
+          color: $text-primary;
+          font-size: 3rem;
+
+          p {
+            margin: 0;
+          }
         }
       }
     }
