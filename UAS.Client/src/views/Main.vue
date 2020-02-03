@@ -3,8 +3,7 @@
     <TheMenu />
     <TheHeader :class="{ blur: menuState }" />
     <main :class="{ blur: menuState }">
-      <TheSeasonMatches class="section__margin" />
-      <TheSeasonSummary class="section__margin" />
+      <router-view></router-view>
     </main>
     <TheFooter :class="{ blur: menuState }" />
   </div>
@@ -14,17 +13,13 @@
 import TheHeader from "@/components/TheHeader.vue";
 import TheMenu from "@/components/TheMenu.vue";
 import TheFooter from "@/components/TheFooter.vue";
-import TheSeasonMatches from "@/components/TheSeasonMatches.vue";
-import TheSeasonSummary from "@/components/TheSeasonSummary.vue";
 
 export default {
   name: "home",
   components: {
     TheHeader,
     TheMenu,
-    TheFooter,
-    TheSeasonMatches,
-    TheSeasonSummary
+    TheFooter
   },
   computed: {
     menuState() {
