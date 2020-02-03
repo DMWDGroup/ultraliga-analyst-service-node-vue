@@ -1,14 +1,27 @@
 import Vue from "vue";
 import VueRouter from "vue-router";
-import Home from "../views/Home.vue";
+import Main from "@/views/Main.vue";
+import Summary from "@/views/Summary.vue";
+import Match from "@/views/Match.vue";
 
 Vue.use(VueRouter);
 
 const routes = [
   {
     path: "/",
-    name: "home",
-    component: Home
+    component: Main,
+    children: [
+      {
+        path: "",
+        name: "summary",
+        component: Summary
+      },
+      {
+        path: "match",
+        name: "match",
+        component: Match
+      }
+    ]
   }
 ];
 
