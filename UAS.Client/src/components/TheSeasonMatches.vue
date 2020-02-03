@@ -27,6 +27,10 @@ export default {
   margin: 4rem 0;
 }
 
+.season-matches {
+  text-align: center;
+}
+
 .season-matches__button-load {
   border: none;
   border-bottom: 1px solid $text-primary;

@@ -70,9 +70,6 @@ export default {
   filter: unset;
   font-size: 2rem;
   padding: 1.5rem 1rem;
-  -webkit-box-shadow: -4px 0px 40px 13px rgba(2, 21, 40, 1);
-  -moz-box-shadow: -4px 0px 40px 13px rgba(2, 21, 40, 1);
-  box-shadow: -4px 0px 40px 13px rgba(2, 21, 40, 1);
 
   .menu__header {
     display: flex;
@@ -139,6 +136,7 @@ export default {
 .slide-leave-active {
   transition: left 0.5s, opacity 0.5s;
 }
+
 .slide-enter,
 .slide-leave-to {
   left: -380px;
