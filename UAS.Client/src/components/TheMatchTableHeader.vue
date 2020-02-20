@@ -37,7 +37,7 @@ export default {
   }
 
   &__left {
-    grid-template-columns: [gradient] 38% [kda] 15% [items] 23% [cs] 11% [gold] auto;
+    grid-template-columns: 38% 15% 23% 11% auto;
     grid-template-areas: "gradient kda items cs gold";
 
     .gradient {
@@ -47,7 +47,7 @@ export default {
   }
 
   &__right {
-    grid-template-columns: [gold] auto [cs] 11% [items] 23% [kda] 15% [gradient] 38%;
+    grid-template-columns: auto 11% 23% 15% 38%;
     grid-template-areas: "gold cs items kda gradient";
 
     .gradient {
