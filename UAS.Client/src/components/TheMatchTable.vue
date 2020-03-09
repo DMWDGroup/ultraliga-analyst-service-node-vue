@@ -6,9 +6,11 @@
     <div class="table-wrapper">
       <div class="table-column table-border">
         <TheMatchTableHeader :leftSide="true" />
+        <TheMatchTableCell :leftSide="true" />
       </div>
       <div class="table-column">
         <TheMatchTableHeader :leftSide="false" />
+        <TheMatchTableCell :leftSide="false" />
       </div>
     </div>
   </div>
@@ -16,9 +18,10 @@
 
 <script>
 import TheMatchTableHeader from "@/components/TheMatchTableHeader.vue";
+import TheMatchTableCell from "@/components/TheMatchTableCell.vue";
 
 export default {
-  components: { TheMatchTableHeader },
+  components: { TheMatchTableHeader, TheMatchTableCell },
   data() {
     return {};
   }
