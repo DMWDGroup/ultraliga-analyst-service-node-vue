@@ -7,9 +7,17 @@
       <div class="table-column table-border">
         <TheMatchTableHeader :leftSide="true" />
         <TheMatchTableCell :leftSide="true" />
+        <TheMatchTableCell :leftSide="true" />
+        <TheMatchTableCell :leftSide="true" />
+        <TheMatchTableCell :leftSide="true" />
+        <TheMatchTableCell :leftSide="true" />
       </div>
       <div class="table-column">
         <TheMatchTableHeader :leftSide="false" />
+        <TheMatchTableCell :leftSide="false" />
+        <TheMatchTableCell :leftSide="false" />
+        <TheMatchTableCell :leftSide="false" />
+        <TheMatchTableCell :leftSide="false" />
         <TheMatchTableCell :leftSide="false" />
       </div>
     </div>

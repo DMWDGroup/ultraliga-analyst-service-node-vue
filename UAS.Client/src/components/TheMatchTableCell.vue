@@ -19,10 +19,21 @@
         </p>
       </div>
     </div>
-    <div class="kda">Kda</div>
-    <div class="items">Items</div>
-    <div class="cs">cs</div>
-    <div class="gold">gold</div>
+    <div class="kda">
+      <div class="kda-stats">3/2/12</div>
+      <div class="kda-ratio">1.34</div>
+    </div>
+    <div class="items">
+      <img src="http://ddragon.leagueoflegends.com/cdn/10.5.1/img/item/1006.png" alt="champion" />
+      <img src="http://ddragon.leagueoflegends.com/cdn/10.5.1/img/item/1006.png" alt="champion" />
+      <img src="http://ddragon.leagueoflegends.com/cdn/10.5.1/img/item/1006.png" alt="champion" />
+      <img src="http://ddragon.leagueoflegends.com/cdn/10.5.1/img/item/1006.png" alt="champion" />
+      <img src="http://ddragon.leagueoflegends.com/cdn/10.5.1/img/item/1006.png" alt="champion" />
+      <img src="http://ddragon.leagueoflegends.com/cdn/10.5.1/img/item/1006.png" alt="champion" />
+      <img src="http://ddragon.leagueoflegends.com/cdn/10.5.1/img/item/2055.png" alt="champion" />
+    </div>
+    <div class="cs">324</div>
+    <div class="gold">16.5k</div>
   </div>
 </template>
 
@@ -58,7 +69,6 @@ export default {
 
   .player {
     display: grid;
-    grid-template-columns: repeat(2, 1.5rem) 3rem auto;
     border-bottom: 1px solid $table-border;
 
     &-runes,
@@ -67,8 +77,17 @@ export default {
       flex-flow: column;
     }
 
+    &-runes {
+      grid-area: runes;
+    }
+
+    &-spells {
+      grid-area: spells;
+    }
+
     &-champion {
       position: relative;
+      grid-area: champion;
       img {
         height: 3rem;
       }
@@ -85,6 +104,7 @@ export default {
 
     &-name {
       display: flex;
+      grid-area: name;
       justify-content: center;
       align-items: center;
 
@@ -97,38 +117,81 @@ export default {
   }
 
   &__left {
-    grid-template-columns: [player] 38% [kda] 15% [items] 23% [cs] 11% [gold] auto;
+    grid-template-columns: [player] 38% [kda] 17% [items] 21% [cs] 11% [gold] auto;
     grid-template-areas: "player kda items cs gold";
 
     .player {
       grid-area: player;
+      grid-template-columns: repeat(2, 1.5rem) 3rem auto;
+      grid-template-areas: "runes spells champion name";
+    }
+
+    .items {
+      flex-flow: column wrap;
     }
   }
 
   &__right {
-    grid-template-columns: [gold] auto [cs] 11% [items] 23% [kda] 15% [player] 38%;
+    grid-template-columns: [gold] auto [cs] 11% [items] 21% [kda] 17% [player] 38%;
     grid-template-areas: "gold cs items kda player";
 
     .player {
       grid-area: player;
+      grid-template-columns: auto 3rem repeat(2, 1.5rem);
+      grid-template-areas: "name champion spells runes";
+    }
+
+    .items {
+      flex-flow: column wrap-reverse;
     }
   }
 
   .kda {
     grid-area: kda;
     border-bottom: 1px solid $table-border;
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    font-weight: 600;
+
+    &-stats {
+      color: $text-primary;
+    }
+
+    &-ratio {
+      color: $secondary;
+      font-size: 1.2rem;
+    }
   }
 
   .items {
     grid-area: items;
+    display: inline-flex;
+    height: 70px;
+    justify-content: center;
+
+    img {
+      width: 1.5rem;
+      padding: 1px;
+    }
   }
 
   .cs {
     grid-area: cs;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: $text-primary;
+    font-weight: 600;
   }
 
   .gold {
     grid-area: gold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: $text-primary;
+    font-weight: 600;
   }
 }
 </style>
