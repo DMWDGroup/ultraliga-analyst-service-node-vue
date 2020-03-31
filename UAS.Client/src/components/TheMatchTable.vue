@@ -4,13 +4,14 @@
       patch 9.12
     </h2>
     <div class="table-wrapper">
-      <div class="table-column table-border">
-        <TheMatchTableHeader :leftSide="true" />
-        <TheMatchTableCell :leftSide="true" />
-        <TheMatchTableCell :leftSide="true" />
-        <TheMatchTableCell :leftSide="true" />
-        <TheMatchTableCell :leftSide="true" />
-        <TheMatchTableCell :leftSide="true" />
+      <div class="table-column">
+        <TheMatchTableHeader :leftSide="true" class="table-border" />
+        <TheMatchTableCell :leftSide="true" class="table-border" />
+        <TheMatchTableCell :leftSide="true" class="table-border" />
+        <TheMatchTableCell :leftSide="true" class="table-border" />
+        <TheMatchTableCell :leftSide="true" class="table-border" />
+        <TheMatchTableCell :leftSide="true" class="table-border" />
+        <TheMatchTableFooter :leftSide="true" />
       </div>
       <div class="table-column">
         <TheMatchTableHeader :leftSide="false" />
@@ -19,6 +20,7 @@
         <TheMatchTableCell :leftSide="false" />
         <TheMatchTableCell :leftSide="false" />
         <TheMatchTableCell :leftSide="false" />
+        <TheMatchTableFooter :leftSide="false" />
       </div>
     </div>
   </div>
@@ -27,9 +29,10 @@
 <script>
 import TheMatchTableHeader from "@/components/TheMatchTableHeader.vue";
 import TheMatchTableCell from "@/components/TheMatchTableCell.vue";
+import TheMatchTableFooter from "@/components/TheMatchTableFooter.vue";
 
 export default {
-  components: { TheMatchTableHeader, TheMatchTableCell },
+  components: { TheMatchTableHeader, TheMatchTableCell, TheMatchTableFooter },
   data() {
     return {};
   }
@@ -52,5 +55,9 @@ export default {
 
 .table-border {
   border-right: 1px solid $table-border;
+
+  &:last-child {
+    border-right: 0;
+  }
 }
 </style>

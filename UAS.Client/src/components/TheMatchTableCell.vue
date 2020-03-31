@@ -59,6 +59,18 @@ export default {
   display: grid;
   text-align: center;
 
+  &:nth-last-child(2) {
+    border-bottom: 1px solid $table-border;
+
+    .player {
+      border: 0;
+    }
+
+    .kda {
+      border: 0;
+    }
+  }
+
   & > * {
     padding: 0.5rem 0;
   }
@@ -69,6 +81,7 @@ export default {
 
   .player {
     display: grid;
+    grid-area: player;
     border-bottom: 1px solid $table-border;
 
     &-runes,
@@ -113,36 +126,6 @@ export default {
         margin: 0;
         font-size: 0.8rem;
       }
-    }
-  }
-
-  &__left {
-    grid-template-columns: [player] 38% [kda] 17% [items] 21% [cs] 11% [gold] auto;
-    grid-template-areas: "player kda items cs gold";
-
-    .player {
-      grid-area: player;
-      grid-template-columns: repeat(2, 1.5rem) 3rem auto;
-      grid-template-areas: "runes spells champion name";
-    }
-
-    .items {
-      flex-flow: column wrap;
-    }
-  }
-
-  &__right {
-    grid-template-columns: [gold] auto [cs] 11% [items] 21% [kda] 17% [player] 38%;
-    grid-template-areas: "gold cs items kda player";
-
-    .player {
-      grid-area: player;
-      grid-template-columns: auto 3rem repeat(2, 1.5rem);
-      grid-template-areas: "name champion spells runes";
-    }
-
-    .items {
-      flex-flow: column wrap-reverse;
     }
   }
 
@@ -192,6 +175,34 @@ export default {
     justify-content: center;
     color: $text-primary;
     font-weight: 600;
+  }
+
+  &__left {
+    grid-template-columns: [player] 38% [kda] 17% [items] 21% [cs] 11% [gold] auto;
+    grid-template-areas: "player kda items cs gold";
+
+    .player {
+      grid-template-columns: repeat(2, 1.5rem) 3rem auto;
+      grid-template-areas: "runes spells champion name";
+    }
+
+    .items {
+      flex-flow: column wrap;
+    }
+  }
+
+  &__right {
+    grid-template-columns: [gold] auto [cs] 11% [items] 21% [kda] 17% [player] 38%;
+    grid-template-areas: "gold cs items kda player";
+
+    .player {
+      grid-template-columns: auto 3rem repeat(2, 1.5rem);
+      grid-template-areas: "name champion spells runes";
+    }
+
+    .items {
+      flex-flow: column wrap-reverse;
+    }
   }
 }
 </style>
