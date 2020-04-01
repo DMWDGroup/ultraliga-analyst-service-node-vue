@@ -36,26 +36,6 @@ export default {
     height: 2rem;
   }
 
-  &__left {
-    grid-template-columns: 38% 17% 21% 11% auto;
-    grid-template-areas: "gradient kda items cs gold";
-
-    .gradient {
-      background: linear-gradient(to right, $red, transparent);
-      grid-area: gradient;
-    }
-  }
-
-  &__right {
-    grid-template-columns: auto 11% 21% 17% 38%;
-    grid-template-areas: "gold cs items kda gradient";
-
-    .gradient {
-      background: linear-gradient(to left, $blue, transparent);
-      grid-area: gradient;
-    }
-  }
-
   .kda {
     grid-area: kda;
   }

@@ -1,5 +1,5 @@
 <template>
-  <div class="table-cell" :class="getSide">
+  <div class="table-cell">
     <div class="player">
       <div class="player-runes">
         <img src="https://raw.communitydragon.org/10.4/game/assets/perks/styles/precision/overheal.png" alt="rune" />
@@ -38,26 +38,14 @@
 </template>
 
 <script>
-export default {
-  props: {
-    leftSide: Boolean
-  },
-  computed: {
-    getSide() {
-      if (this.leftSide) {
-        return "table-cell__left";
-      } else {
-        return "table-cell__right";
-      }
-    }
-  }
-};
+export default {};
 </script>
 
 <style lang="scss">
 .table-cell {
   display: grid;
   text-align: center;
+  border-right: 1px solid $table-border;
 
   &:nth-last-child(2) {
     border-bottom: 1px solid $table-border;
@@ -175,34 +163,6 @@ export default {
     justify-content: center;
     color: $text-primary;
     font-weight: 600;
-  }
-
-  &__left {
-    grid-template-columns: [player] 38% [kda] 17% [items] 21% [cs] 11% [gold] auto;
-    grid-template-areas: "player kda items cs gold";
-
-    .player {
-      grid-template-columns: repeat(2, 1.5rem) 3rem auto;
-      grid-template-areas: "runes spells champion name";
-    }
-
-    .items {
-      flex-flow: column wrap;
-    }
-  }
-
-  &__right {
-    grid-template-columns: [gold] auto [cs] 11% [items] 21% [kda] 17% [player] 38%;
-    grid-template-areas: "gold cs items kda player";
-
-    .player {
-      grid-template-columns: auto 3rem repeat(2, 1.5rem);
-      grid-template-areas: "name champion spells runes";
-    }
-
-    .items {
-      flex-flow: column wrap-reverse;
-    }
   }
 }
 </style>

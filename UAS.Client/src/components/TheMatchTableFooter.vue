@@ -1,5 +1,5 @@
 <template>
-  <div class="table-footer" :class="getSide">
+  <div class="table-footer">
     <div class="player">
       <img src="http://ddragon.leagueoflegends.com/cdn/10.4.1/img/champion/Aatrox.png" alt="champion" />
       <img src="http://ddragon.leagueoflegends.com/cdn/10.4.1/img/champion/Aatrox.png" alt="champion" />
@@ -16,20 +16,7 @@
 </template>
 
 <script>
-export default {
-  props: {
-    leftSide: Boolean
-  },
-  computed: {
-    getSide() {
-      if (this.leftSide) {
-        return "table-footer__left";
-      } else {
-        return "table-footer__right";
-      }
-    }
-  }
-};
+export default {};
 </script>
 
 <style lang="scss">
@@ -85,20 +72,6 @@ export default {
     justify-content: center;
     color: $text-primary;
     font-weight: 600;
-  }
-
-  &__left {
-    grid-template-columns: [player] 38% [kda] 17% [items] 21% [cs] 11% [gold] auto;
-    grid-template-areas: "player kda items cs gold";
-  }
-
-  &__right {
-    grid-template-columns: [gold] auto [cs] 11% [items] 21% [kda] 17% [player] 38%;
-    grid-template-areas: "gold cs items kda player";
-
-    .player {
-      justify-content: flex-end;
-    }
   }
 }
 </style>
